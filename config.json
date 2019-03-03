@@ -1,0 +1,9 @@
+{
+   "port": "DIY-PORT",
+   "adminAccount": "DIY-AC",
+   "db": {
+      "servername": "DIY-DB-SERVER",
+      "DATABASE": "DIY-DB-NAME",
+      "port": "DIY-DB-PORT"
+   }
+}
