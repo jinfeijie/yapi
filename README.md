@@ -87,6 +87,15 @@ server {
 }
 ```
 
+## 启动方法
+
+1. 修改`docker-compose.yml`文件里面相关参数
+
+2. 创建network：`docker network create back-net`
+
+3. 启动服务：`docker-compose -d`
+
+
 ## 其他
 📧联系[@jinfeijie](mailto:me@jinfeijie.cn)
 
