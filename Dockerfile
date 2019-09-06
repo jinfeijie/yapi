@@ -1,6 +1,6 @@
 FROM node:10.15.2-jessie
 MAINTAINER mrjin<me@jinfeijie.cn>
-ENV VERSION 	1.5.6
+ENV VERSION 	1.8.3
 ENV HOME        "/home"
 ENV PORT        3000
 ENV ADMIN_EMAIL "me@jinfeijie.cn"
@@ -23,9 +23,10 @@ RUN rm -rf node && \
         GIT_URL=${GIT_MIRROR_URL} && npm config set registry https://registry.npm.taobao.org; \
     fi; \
     echo ${GIT_URL} && \
-	git clone --depth 1 ${GIT_URL} vendors && \
-	mv ${HOME}/config.json ${VENDORS} && \
+	git clone ${GIT_URL} vendors && \
 	cd vendors && \
+	git fetch origin  v${VERSION}:v${VERSION} && \
+	git checkout v${VERSION} && \
 	npm install -g node-gyp yapi-cli && \
 	npm install --production && \
  	chmod +x /bin/entrypoint.sh && \
