@@ -9,6 +9,8 @@
 <a href="https://github.com/jinfeijie/yapi"><img src="https://img.shields.io/github/license/jinfeijie/yapi.svg?style=flat-square" alt="License"></a>
 </p>
 
+## ⚠️注意
+⚠️注意：本仓库目前只支持安装，暂不支持升级，请知晓。如需升级请备份mongoDB内的数据。
 
 ## 使用
 默认密码是：`ymfe.org`，安装成功后进入后台修改
@@ -16,7 +18,7 @@
 ## 可修改变量
 | 环境变量       | 默认值         | 建议         |
 | ------------- |:-------------:|:-----------:|
-| VERSION | 1.5.6  | 不建议修改   |
+| VERSION | 1.5.6  | 可以修改成yapi已发布的版本   |
 | HOME | /home | 可修改 |  
 | PORT | 3000  | 可修改 | 
 | ADMIN_EMAIL | me@jinfeijie.cn  | 建议修改 | 
