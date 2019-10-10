@@ -95,7 +95,7 @@ server {
 
 2. 创建network：`docker network create back-net`
 
-3. 启动服务：`docker-compose -d`
+3. 启动服务：`docker-compose up -d`
 
 
 ## 其他
