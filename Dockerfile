@@ -1,4 +1,4 @@
-FROM node:10.20.1-jessie
+FROM node:10.21.0-jessie
 MAINTAINER mrjin<me@jinfeijie.cn>
 ENV VERSION 	1.8.3
 ENV HOME        "/home"
