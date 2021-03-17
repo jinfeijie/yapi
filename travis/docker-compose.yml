@@ -5,7 +5,7 @@ services:
 #    build: ../
     container_name: yapi
     environment:
-      - VERSION=1.5.6
+      - VERSION=1.9.2
       - LOG_PATH=/tmp/yapi.log
       - HOME=/home
       - PORT=3000
