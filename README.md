@@ -1,7 +1,62 @@
+1⃣️ ⚠️⚠️[YAPI 0Day](https://s.tencent.com/research/report/76)，各位注意检查服务器。官方暂无更新npm最新包，临时解决方案查看下文⚠️⚠️
+<details>
+<summary>⚠️⚠️⚠️临时处置方案，点击这里⚠️⚠️⚠️</summary>
+<pre><code>
+1、关闭YAPI用户注册功能
+
+在 config.json 中添加以下配置项，禁止用户注册或启用LDAP认证：
+```
+{
+
+  "closeRegister":true 
+
+}
+```
+修改完成后，重启 YAPI 服务生效。
+
+2、关闭YAPI Mock功能
+
+1)、在config.json中新增mock: false参数：
+```
+{ ... "mock": false, }
+```
+
+2)、在`exts/yapi-plugin-andvanced-mock/server.js`文件中找到：
+
+```
+if (caseData && caseData.case_enable) {...}`
+```
+
+并添加下列代码：
+```
+if(!yapi.WEBCONFIG.mock) { return false; }
+```
+3、对高级Mock功能进行关键字过滤
+
+在`/server/utils/commons.js`文件中找到：
+```
+sandbox = yapi.commons.sandbox(sandbox, script);
+```
+并添加下列代码：
+```
+const filter = '/process|exec|require/g'; const reg = new RegExp(filter, "g"); if(reg.test(script)) { return false; }
+```
+4、对YAPI平台的访问进行限制
+
+5、修改管理员默认账号口令，清除弱口令。
+
+</code></pre>
+</details>
+
+<br/>
+<br/>
+<br/>
+
+
+
+
 <h2 align="center">Docker for YApi</h2>
 <p align="center">一键部署YApi</p>
-
-<p align="center">JimCY [me@jinfeijie.cn] </p>
 
 <p align="center">
 <a href="https://travis-ci.org/jinfeijie/yapi"><img src="https://travis-ci.org/jinfeijie/yapi.svg?branch=master" alt="Build Status"></a>
@@ -21,7 +76,7 @@
 | VERSION | 1.5.6  | 可以修改成yapi已发布的版本   |
 | HOME | /home | 可修改 |  
 | PORT | 3000  | 可修改 | 
-| ADMIN_EMAIL | me@jinfeijie.cn  | 建议修改 | 
+| ADMIN_EMAIL | test@test.com  | 建议修改 | 
 | DB_SERVER | mongo(127.0.0.1)  | 不建议修改 |
 | DB_NAME | yapi  | 不建议修改 |
 | DB_PORT | 27017 | 不建议修改|
@@ -44,7 +99,7 @@ services:
       - LOG_PATH=/tmp/yapi.log
       - HOME=/home
       - PORT=3000
-      - ADMIN_EMAIL=me@jinfeijie.cn
+      - ADMIN_EMAIL=test@test.com
       - DB_SERVER=mongo
       - DB_NAME=yapi
       - DB_PORT=27017
@@ -96,9 +151,5 @@ server {
 2. 创建network：`docker network create back-net`
 
 3. 启动服务：`docker-compose up -d`
-
-
-## 其他
-📧联系[@jinfeijie](mailto:me@jinfeijie.cn)
 
 ✨欢迎 Star && Fork
