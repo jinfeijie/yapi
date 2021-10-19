@@ -1,8 +1,5 @@
 ### 📢📢📢 因为YAPI官方一直未提供0Day修复版本的安装包，继续使用存在巨大风险，因此本仓库决定归档 
 
-### 📢📢📢  ![招聘](https://i.loli.net/2021/07/25/LZYRkehXGNVnFAB.png)
-
-
 <details>
 <summary>本仓库已归档</summary>
 
