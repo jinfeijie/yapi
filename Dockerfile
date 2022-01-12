@@ -1,6 +1,6 @@
 FROM node:10.22.0-jessie
 MAINTAINER mrjin<me@jinfeijie.cn>
-ENV VERSION 	1.9.2
+ENV VERSION 	1.10.2
 ENV HOME        "/home"
 ENV PORT        3000
 ENV ADMIN_EMAIL "me@jinfeijie.cn"

@@ -1,8 +1,3 @@
-### 📢📢📢 因为YAPI官方一直未提供0Day修复版本的安装包，继续使用存在巨大风险，因此本仓库决定归档 
-
-<details>
-<summary>本仓库已归档</summary>
-
 <h2 align="center">Docker for YApi</h2>
 <p align="center">一键部署YApi</p>
 
@@ -43,7 +38,7 @@ services:
     # build: ./
     container_name: yapi
     environment:
-      - VERSION=1.5.6
+      - VERSION=1.10.2
       - LOG_PATH=/tmp/yapi.log
       - HOME=/home
       - PORT=3000
@@ -102,4 +97,3 @@ server {
 
 ✨欢迎 Star && Fork
 
-</details>
