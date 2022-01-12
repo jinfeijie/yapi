@@ -1,8 +1,3 @@
-### 📢📢📢 因为YAPI官方一直未提供0Day修复版本的安装包，继续使用存在巨大风险，因此本仓库决定归档 
-
-<details>
-<summary>本仓库已归档</summary>
-
 <h2 align="center">Docker for YApi</h2>
 <p align="center">一键部署YApi</p>
 
@@ -21,7 +16,7 @@
 ## 可修改变量
 | 环境变量       | 默认值         | 建议         |
 | ------------- |:-------------:|:-----------:|
-| VERSION | 1.5.6  | 可以修改成yapi已发布的版本   |
+| VERSION | 1.9.3  | *强烈建议升级*   |
 | HOME | /home | 可修改 |  
 | PORT | 3000  | 可修改 | 
 | ADMIN_EMAIL | test@test.com  | 建议修改 | 
@@ -43,7 +38,7 @@ services:
     # build: ./
     container_name: yapi
     environment:
-      - VERSION=1.5.6
+      - VERSION=1.9.3
       - LOG_PATH=/tmp/yapi.log
       - HOME=/home
       - PORT=3000
@@ -101,5 +96,3 @@ server {
 3. 启动服务：`docker-compose up -d`
 
 ✨欢迎 Star && Fork
-
-</details>
