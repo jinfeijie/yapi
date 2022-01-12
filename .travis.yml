@@ -16,5 +16,4 @@ install:
 script:
  - docker images
  - docker ps
- - sleep 120
  - cd .. && bash ./wait-for-it.sh http://127.0.0.1:3000 -- curl http://127.0.0.1:3000
