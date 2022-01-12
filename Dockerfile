@@ -23,12 +23,11 @@ RUN rm -rf node && \
         GIT_URL=${GIT_MIRROR_URL} && npm config set registry https://registry.npm.taobao.org; \
     fi; \
     echo ${GIT_URL} && \
-	git clone ${GIT_URL} vendors && \
+	git clone -b v${VERSION} --depth=1 ${GIT_URL} vendors && \
 	cd vendors && \
-	git fetch origin  v${VERSION}:v${VERSION} && \
-	git checkout v${VERSION} && \
 	npm install -g node-gyp yapi-cli && \
 	npm install --production && \
+	cd .. && npm cache clean --force && \
  	chmod +x /bin/entrypoint.sh && \
  	chmod +x /wait-for-it.sh
 
