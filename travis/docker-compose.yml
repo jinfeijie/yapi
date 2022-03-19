@@ -5,8 +5,7 @@ services:
 #    build: ../
     container_name: yapi
     environment:
-      - VERSION=1.9.3
-      - LOG_PATH=/tmp/yapi.log
+      - VERSION=1.10.2
       - HOME=/home
       - PORT=3000
       - ADMIN_EMAIL=me@jinfeijie.cn
@@ -17,7 +16,7 @@ services:
     ports:
       - 127.0.0.1:3000:3000
     volumes:
-      - ~/data/yapi/log/yapi.log:/home/vendors/log # log dir
+      - ~/data/yapi/log:/home/log # log dir
     depends_on:
       - mongo
     entrypoint: "bash /wait-for-it.sh mongo:27017 -- entrypoint.sh"

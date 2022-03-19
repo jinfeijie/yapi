@@ -1,9 +1,9 @@
 {
-   "port": "DIY-PORT",
-   "adminAccount": "DIY-AC",
+   "port": "3000",
+   "adminAccount": "admin@admin.com",
    "db": {
-      "servername": "DIY-DB-SERVER",
-      "DATABASE": "DIY-DB-NAME",
-      "port": "DIY-DB-PORT"
+      "servername": "mongo",
+      "DATABASE": "yapi",
+      "port": "27017"
    }
 }
